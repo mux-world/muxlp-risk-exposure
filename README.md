@@ -2,9 +2,9 @@
 
 ## Rationale
 
-The liquidity pool on MUX holds a portfolio of assets, thus MUXLP stakers have risk exposure on ETH, BTC, etc. On the other hand, the MUXLP pool is the counterparty of traders, the pool will hold positions against traders in the opposite direction, MUXLP stakers will also have risk exposure on trader's positions.
+The liquidity pool on MUX (MUXLP pool) holds a portfolio of assets; thus, MUXLP stakers have risk exposure on ETH, BTC and other pooled assets. In addition, the MUXLP pool is the counterparty of traders, and the pool will hold positions against traders in the opposite direction. Therefore, MUXLP stakers will also have risk exposure on trader’s positions.
 
-In this code example, we show how to calculate both LP exposure and position exposure.
+The following code example shows how to calculate both LP exposure and position exposure.
 
 ## How to use
 
