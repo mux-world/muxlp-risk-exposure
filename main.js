@@ -13,7 +13,7 @@ async function main() {
     const traderExposure = new BigNumber(asset['shorts']).minus(asset['longs']).div(totalMlp)
     console.log(
       'LP exposure:', lpExposure.toFixed(), symbol, 'per MUXLP.', 
-      'LP+Trader exposure', lpExposure.plus(traderExposure).toFixed(), symbol, 'per MUXLP'
+      'LP+Trader exposure:', lpExposure.plus(traderExposure).toFixed(), symbol, 'per MUXLP'
     )
   }
 }
