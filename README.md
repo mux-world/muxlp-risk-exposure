@@ -16,12 +16,21 @@ node main.js
 Example output:
 
 ```
-LP exposure: 0.00018639271630371444 ETH per MUXLP.  LP+Trader exposure: 0.00014537781178226221 ETH per MUXLP.
-LP exposure: 0.00000587356147538440 BTC per MUXLP.  LP+Trader exposure: 0.00000539707892698411 BTC per MUXLP.
-LP exposure: 0.00097308311647221601 AVAX per MUXLP. LP+Trader exposure: 0.00084693954484690035 AVAX per MUXLP.
-LP exposure: 0.00006169916213045899 BNB per MUXLP.  LP+Trader exposure: 0.00006571107537208727 BNB per MUXLP.
-LP exposure: 0.02713897503985868554 FTM per MUXLP.  LP+Trader exposure: 0.00540661135742698940 FTM per MUXLP.
-LP exposure: 0.01335454655238281779 OP per MUXLP.   LP+Trader exposure: 0.01303803265281304572 OP per MUXLP.
+LP exposure without trader's position per MUXLP
+0.00015144490643590913 ETH
+0.00000462201438306677 BTC
+0.07469286750783622934 ARB
+0.20944254208111257074 USDC
+0.13424012785159929369 USDT
+...
+
+LP exposure with trader's position per MUXLP
+0.0000810098058726581 ETH
+0.00000379198364680385 BTC
+0.00988380425627444653 ARB
+0.20944254208111257074 USDC
+0.13424012785159929369 USDT
+...
 ```
 
-The output means if you hold 1 MUXLP, it is equivalent to hold 0.00018 ETH + 0.0000058 BTC + ... when you only consider the pool liquidity, or hold 0.00014 ETH + 0.0000053 BTC + ... when you consider both the pool liquidity and trader's positions.
+The output means if you hold 1 MUXLP, it is equivalent to hold 0.00015 ETH + 0.0000046 BTC + ... when you only consider the pool liquidity, or hold 0.000081 ETH + 0.0000037 BTC + ... when you consider both the pool liquidity and trader's positions.
