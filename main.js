@@ -13,14 +13,7 @@ const providerConfigs = [
 async function main() {
   const { multiChainLiquidity, muxlpTotalSupply } = await getMultiChainLiquidity()
 
-  console.log("LP exposure without trader's position per MUXLP")
-  for (let symbol in multiChainLiquidity) {
-    const lpExposure = multiChainLiquidity[symbol].lpBalance.div(muxlpTotalSupply)
-    console.log(lpExposure.toFixed(), symbol)
-  }
-  
-  console.log("")
-  console.log("LP exposure with trader's position per MUXLP")
+  console.log("Exposure per MUXLP")
   for (let symbol in multiChainLiquidity) {
     const lpExposure = multiChainLiquidity[symbol].lpBalance.div(muxlpTotalSupply)
     const traderExposure = multiChainLiquidity[symbol].totalShortPosition.minus(multiChainLiquidity[symbol].totalLongPosition).div(muxlpTotalSupply)
