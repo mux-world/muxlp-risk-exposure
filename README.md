@@ -25,5 +25,5 @@ Delta values per MUXLP
 ...
 ```
 
-The above list represents the delta values of a 1 MUXLP, in terms of the risk metric called delta (Δ), which estimates the price change of MUXLP. For instance, if the price of ETH increases by $1, the price of MUXLP is expected to rise by $0.0000810098058726581.
+The above list represents the delta values of 1 MUXLP, in terms of the risk metric called delta (Δ), which estimates the price change of MUXLP. For instance, if the price of ETH increases by $1, the price of MUXLP is expected to rise by $0.0000810098058726581.
 
