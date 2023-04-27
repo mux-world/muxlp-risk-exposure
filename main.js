@@ -13,7 +13,7 @@ const providerConfigs = [
 async function main() {
   const { multiChainLiquidity, muxlpTotalSupply } = await getMultiChainLiquidity()
 
-  console.log("Exposure per MUXLP")
+  console.log("Delta values per MUXLP")
   for (let symbol in multiChainLiquidity) {
     const lpExposure = multiChainLiquidity[symbol].lpBalance.div(muxlpTotalSupply)
     const traderExposure = multiChainLiquidity[symbol].totalShortPosition.minus(multiChainLiquidity[symbol].totalLongPosition).div(muxlpTotalSupply)

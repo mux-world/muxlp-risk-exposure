@@ -1,4 +1,4 @@
-# MUXLP Risk Exposure Calculator
+# MUXLP Delta Values
 
 ## Rationale
 
@@ -16,7 +16,7 @@ node main.js
 Example output:
 
 ```
-Exposure per MUXLP
+Delta values per MUXLP
 0.0000810098058726581 ETH
 0.00000379198364680385 BTC
 0.00988380425627444653 ARB
