@@ -15,8 +15,9 @@ async function main() {
 
   console.log("Delta values per MUXLP")
   for (let symbol in multiChainLiquidity) {
-    const lpExposure = multiChainLiquidity[symbol].lpBalance.div(muxlpTotalSupply)
-    const traderExposure = multiChainLiquidity[symbol].totalShortPosition.minus(multiChainLiquidity[symbol].totalLongPosition).div(muxlpTotalSupply)
+    const liquidity = multiChainLiquidity[symbol]
+    const lpExposure = liquidity.lpBalance.plus(liquidity.credit).div(muxlpTotalSupply)
+    const traderExposure = liquidity.totalShortPosition.minus(liquidity.totalLongPosition).div(muxlpTotalSupply)
     console.log(lpExposure.plus(traderExposure).toFixed(), symbol)
   }
 }
@@ -25,6 +26,7 @@ function getEmptyAsset() {
   return {
     isStable: false,
     lpBalance: new BigNumber(0),
+    credit: new BigNumber(0),
     totalLongPosition: new BigNumber(0),
     totalShortPosition: new BigNumber(0),
   }
@@ -65,10 +67,10 @@ async function getSingleChainLiquidity(provider, multiChainLiquidity) {
     liquidity.lpBalance = liquidity.lpBalance
       .plus(asset.spotLiquidity)
       .minus(asset.collectedFee)
-      .plus(asset.credit)
     if (!asset.isStable) {
       liquidity.lpBalance = liquidity.lpBalance.plus(asset.deduct)
     }
+    liquidity.credit = liquidity.credit.plus(asset.credit)
     liquidity.totalLongPosition = liquidity.totalLongPosition.plus(asset.totalLongPosition)
     liquidity.totalShortPosition = liquidity.totalShortPosition.plus(asset.totalShortPosition)
   }
